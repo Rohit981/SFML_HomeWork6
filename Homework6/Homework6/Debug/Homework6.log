@@ -1,0 +1,3 @@
+﻿  Game.cpp
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.h(13,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Homework6.vcxproj -> E:\SFML Projects\SFML_HomeWork6\Homework6\Debug\Homework6.exe

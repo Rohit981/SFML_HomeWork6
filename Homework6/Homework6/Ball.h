@@ -45,8 +45,7 @@ public:
 
 	void Bounce( const sf::Vector2f& BallPos, const sf::Vector2f& PaddlePos, const sf::Vector2f& PaddleSize, int SpeedIncrease);
 
-	//void ResetBallPos( sf::RenderWindow& window, float deltaTime, bool IsClicked);
-
+	
 	void MoveBall(float deltaTime);
 
 	float ResetTimer = 0;

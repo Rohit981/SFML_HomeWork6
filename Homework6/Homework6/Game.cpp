@@ -80,14 +80,27 @@ void Game::update()
 	{
 		
 		soundManager->PlayGameOverSFX();
+		playerController->IsLeftClicked = false;
+
+		
+		if (playerController->isRestarted == true)
+		{
+			RestartLevel();
+			
+
+		}
 
 	}
+
+	
 
 
 
 	gameUI->Update(window, deltaTime);
 
 	level->update(window, deltaTime);
+
+	ChangeLevel(deltaTime);
 
 
 }
@@ -130,7 +143,7 @@ void Game::Setup()
 	gameUI = new UI(ball);
 	soundManager = new SoundManager();
 
-	level = new Level(ball, soundManager, gameUI);
+	level = new Level(ball, soundManager, gameUI, 1);
 
 
 }
@@ -149,7 +162,7 @@ void Game::CollisionCheck()
 		ball->rebound = 0;
 		ball->setDirection(-1);
 
-		ball->Bounce(ball->getPosition(), paddle->getPosition(), paddle->getSize(), 5);
+		ball->Bounce(ball->getPosition(), paddle->getPosition(), paddle->getSize(), 10);
 
 
 
@@ -227,6 +240,33 @@ void Game::ResetBall()
 	}
 }
 
+//Restarts the level when spcaebar is pressed
+void Game::RestartLevel()
+{
+	level = new Level(ball, soundManager, gameUI, 1);
+	gameUI->SetLive(3);
+	gameUI->SetScore(0);
+	gameUI->GameOvertext.setString("");
+
+}
+
+void Game::ChangeLevel(float deltaTime)
+{
+	if (level->isLevelCompleted == true)
+	{
+		playerController->IsLeftClicked = false;
+
+		delay += deltaTime;
+
+	}
+
+	if (delay >= 1.f)
+	{
+		level = new Level(ball, soundManager, gameUI, level->GetCurrentLevel() + 1);
+		delay = 0;
+	}
+
+}
 
 
 // Implement destructor, make sure we free up any memory that we allocated here!

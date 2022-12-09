@@ -12,6 +12,7 @@ public:
 	void HandleInput(sf::RenderWindow& window);
 
 	bool IsLeftClicked = false;
+	bool isRestarted = false;
 
 
 private:

@@ -1,30 +1,101 @@
 #include "Level.h"
+#include <iostream>
 
 using namespace gm;
 using namespace sf;
+using namespace std;
 
-Level::Level(Ball* ball, SoundManager* soundManager, UI* uiManager)
+
+Level::Level(Ball* ball, SoundManager* soundManager, UI* uiManager, int level)
 {
 	// Initializing ball, soundmanager and uiManager references
 	this->ball = ball;
 	this->soundManager = soundManager;
 	this->uiManager = uiManager;
 
-	BrickPos[0][0] = 490;
-	
-	bricks.push_back(std::make_unique<Brick>(Vector2f(290, 350), Vector2f(100, 30), &normal_brick));
-	bricks.push_back(std::make_unique<Brick>(Vector2f(490, 350), Vector2f(100, 30), &strong_brick));
-	
-	for (int row = 0; row < brickHeight; row++)
-	{
-		for (int col = 0; col < brickWidth; col++)
-		{
-			
-			
+	uiManager->LevelCompletedtext.setString("");
+	isLevelCompleted = false;
 
-		}
-		
+	if (level == 4)
+	{
+		level = 1;
 	}
+
+	
+	if (level == 1)
+	{
+
+		BrickPos[0][1] = 30;
+		BrickPos[2][2] = 50;
+		BrickPos[3][3] = 150;
+		BrickPos[4][4] = 200;
+		BrickPos[5][5] = 250;
+		BrickPos[6][6] = 300;
+		BrickPos[7][7] = 350;
+		BrickPos[8][8] = 230;
+		BrickPos[9][9] = 400;
+
+	}
+	
+	if (level == 2)
+	{
+		BrickPos[1][1] = 60;
+		BrickPos[2][2] = 100;
+		BrickPos[3][3] = 150;
+		BrickPos[4][4] = 200;
+		BrickPos[5][5] = 250;
+		BrickPos[6][6] = 300;
+		BrickPos[7][7] = 350;
+		BrickPos[8][8] = 230;
+		BrickPos[9][9] = 30;
+	}
+
+	if (level == 3)
+	{
+		BrickPos[1][1] = 150;
+		BrickPos[2][2] = 100;
+		BrickPos[3][3] = 180;
+		BrickPos[4][4] = 200;
+		BrickPos[5][5] = 280;
+		BrickPos[6][6] = 300;
+		BrickPos[7][7] = 350;
+		BrickPos[8][8] = 230;
+		BrickPos[9][9] = 450;
+	}
+	
+	
+	
+	
+	
+	//for (int row = 1; row < brickHeight; row++)
+	//{
+	//	for (int col = 1; col < brickWidth; col++)
+	//	{
+	//		
+	//		BrickPos[row][col] = { 490};
+	//		//BrickPos[0][col] = { 29};
+	//		
+
+	//		cout << "Element at x[" << row
+	//			<< "][" << col << "]: ";
+	//		cout << BrickPos[row][col] << endl;
+	//	}
+	//	
+	//}
+
+	for (int i = 0; i < 5; i++)
+	{
+		
+		bricks.push_back(std::make_unique<Brick>(Vector2f(BrickPos[i][i], BrickPos[i][i]), Vector2f(100, 30), &normal_brick));	
+
+	}
+	for (int i = 5; i < 10; i++)
+	{
+		bricks.push_back(std::make_unique<Brick>(Vector2f(BrickPos[i][i], BrickPos[i][i]), Vector2f(100, 30), &strong_brick));
+	}
+
+	
+	SetCurrentLevel(level);
 
 	
 }
@@ -35,7 +106,7 @@ Level::~Level()
 
 void Level::update(RenderWindow& window, float deltaTime)
 {
-	
+
 	for (int i = 0; i < bricks.size(); i++)
 	{
 
@@ -55,7 +126,7 @@ void Level::update(RenderWindow& window, float deltaTime)
 			{
 				uiManager->SetScore(uiManager->GetScore() + bricks[i]->score);
 				soundManager->PlayShatterSFX();
-				bricks.erase(bricks.begin() - i);
+				bricks.erase(bricks.begin() + i);
 			}
 			else
 			{
@@ -75,8 +146,10 @@ void Level::update(RenderWindow& window, float deltaTime)
 	{
 		uiManager->LevelCompletedtext.setString("LEVEL COMPLETED");
 		soundManager->PlayLevelCompleteSFX();
+		isLevelCompleted = true;
 
 	}
+	
 
 }
 
@@ -86,6 +159,16 @@ void Level::render(RenderWindow& window, float deltaTime)
 	{
 		bricks[i]->render(window, deltaTime);
 	}
+}
+
+void Level::SetCurrentLevel(const int currentLevel)
+{
+	this->currentLevel = currentLevel;
+}
+
+const int Level::GetCurrentLevel() const
+{
+	return currentLevel;
 }
 
 void Level::Reset()

@@ -22,7 +22,6 @@ void Ball::update(RenderWindow& window, float deltaTime)
 {
 	MoveBall(deltaTime);
 
-	//ResetBallPos(window, deltaTime);
 }
 
 void Ball::render(RenderWindow& window, float deltaTime)
@@ -119,46 +118,6 @@ void Ball::Bounce(const sf::Vector2f& BallPos, const sf::Vector2f& PaddlePos,con
 }
 
 
-//when the ball goes off the screen then after 2 sec reset the ball to the original position and radomize direction
-//void Ball::ResetBallPos(sf::RenderWindow& window, float deltaTime, bool IsClicked)
-//{
-//	/*IsClicked = false;
-//	cout << IsClicked << endl;*/
-//
-//	if ( getPosition().y > window.getSize().x - getSize().x)
-//	{
-//
-//		
-//		ResetTimer += deltaTime;
-//
-//		
-//		
-//	}
-//
-//	if (ResetTimer >= 2)
-//	{
-//		
-//		//MoveDirection = 1;
-//
-//		BallMovementSpeed = 300;
-//
-//		printf("Called Reset");
-//
-//		//setPosition(Vector2f(paddle->getPosition().x + paddle->getSize().x / 2 + 10, paddle->getPosition().y - paddle->getSize().y / 2 - 5));
-//		//setPosition(Vector2f(300,0));
-//
-//		IsClicked = false;
-//
-//		/*cout << "Ball POS X: " << paddle->getPosition().x + paddle->getSize().x / 2 + 10 << endl;
-//		cout << "Ball POS Y: " << paddle->getPosition().y - paddle->getSize().y / 2 - 5 << endl;*/
-//
-//		ResetTimer = 0;
-//		
-//		
-//	}
-//
-//	
-//}
 
 // moves the ball on update
 void Ball::MoveBall(float deltaTime)

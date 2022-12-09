@@ -20,6 +20,8 @@ namespace gm
 		const int GetScore() const;
 
 		sf::Text LevelCompletedtext;
+		sf::Text GameOvertext;
+
 
 	private:
 
@@ -32,7 +34,6 @@ namespace gm
 		sf::Font font;
 		sf::Text PlayerLivestext;
 		sf::Text Playerscoretext;
-		sf::Text GameOvertext;
 		
 
 		

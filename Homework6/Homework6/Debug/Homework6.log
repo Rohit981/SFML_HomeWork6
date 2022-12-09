@@ -1,2 +1,54 @@
-﻿  Brick.cpp
+﻿  Ball.cpp
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.h(13,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.cpp(85,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.cpp(91,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.cpp(91,24): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.cpp(99,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Game.cpp
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.h(13,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Level.cpp
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.h(13,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Level.cpp(89,82): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Level.cpp(89,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Level.cpp(94,82): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Level.cpp(94,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Level.cpp(110,20): warning C4018: '<': signed/unsigned mismatch
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Level.cpp(158,20): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.h(13,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  UI.cpp
+E:\SFML Projects\SFML_HomeWork6\Homework6\Homework6\Ball.h(13,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   Homework6.vcxproj -> E:\SFML Projects\SFML_HomeWork6\Homework6\Debug\Homework6.exe

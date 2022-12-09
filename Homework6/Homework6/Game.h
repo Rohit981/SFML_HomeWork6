@@ -52,6 +52,8 @@ namespace gm {
 		UI* gameUI;
 		SoundManager* soundManager;
 
+		float delay = 0;
+
 		float testTime = 0;
 \
 	public:
@@ -67,6 +69,8 @@ namespace gm {
 		void Setup();
 		void CollisionCheck();
 		void ResetBall();
+		void RestartLevel();
+		void ChangeLevel(float deltaTime);
 		// Destructor
 		~Game();
 	};

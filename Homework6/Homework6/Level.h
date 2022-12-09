@@ -26,7 +26,7 @@ namespace gm
 		};
 
 	public:
-		Level(Ball* ball, SoundManager* soundManager, UI* uiManager);
+		Level(Ball* ball, SoundManager* soundManager, UI* uiManager, int level);
 		~Level();
 
 		virtual void update(sf::RenderWindow& window, float deltaTime);
@@ -34,16 +34,28 @@ namespace gm
 
 		void Reset();
 
+		void SetCurrentLevel(const int currentLevel);
+			
+		const int GetCurrentLevel() const;
+
+		bool isLevelCompleted = false;
+		
+
 	private:
 		const int brickHeight = 10;
 		const int brickWidth = 10;
+
 		int BrickPos[10][10];
 		std::vector<std::unique_ptr<Brick>> bricks;
+		int currentLevel = 1;
+		
 
 		SoundManager* soundManager;
 		UI* uiManager;
 
 		Ball* ball;
+
+		
 
 		
 

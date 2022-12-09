@@ -17,7 +17,7 @@ Paddle::Paddle(const Vector2f& position, const Vector2f& size) : GameObject(posi
 void Paddle::update(sf::RenderWindow& window, float deltaTime)
 {
 	if(getPosition().x > 20 && getPosition().x < 530)
-	move(Vector2f(PlayerMovementSpeedPerSecond* direction  * deltaTime, 0));
+	move(Vector2f(PlayerMovementSpeedPerSecond  * direction * deltaTime, 0));
 
 	
 }

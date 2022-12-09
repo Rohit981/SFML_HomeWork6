@@ -19,6 +19,8 @@ namespace gm
 		void SetScore(const int PlayerScore);
 		const int GetScore() const;
 
+		sf::Text LevelCompletedtext;
+
 	private:
 
 		int PlayerLive = 3;
@@ -31,6 +33,7 @@ namespace gm
 		sf::Text PlayerLivestext;
 		sf::Text Playerscoretext;
 		sf::Text GameOvertext;
+		
 
 		
 

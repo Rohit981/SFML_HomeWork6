@@ -24,13 +24,19 @@ UI::UI(Ball* ball)
 	Playerscoretext.setFillColor(Color::Red);
 	Playerscoretext.setStyle(Text::Bold);
 	Playerscoretext.setPosition(Vector2f(550, 450));
-	Playerscoretext.setString(to_string(GetScore()));
+	//Playerscoretext.setString(to_string(GetScore()));
 
 	GameOvertext.setFont(font);
 	GameOvertext.setCharacterSize(60);
 	//scoretext.setColor(Color::Green);
 	GameOvertext.setStyle(Text::Bold);
 	GameOvertext.setPosition(Vector2f(130, 300));
+
+	LevelCompletedtext.setFont(font);
+	LevelCompletedtext.setCharacterSize(60);
+	//scoretext.setColor(Color::Green);
+	LevelCompletedtext.setStyle(Text::Bold);
+	LevelCompletedtext.setPosition(Vector2f(30, 200));
 	
 
 	this->ball = ball;
@@ -44,6 +50,8 @@ UI::~UI()
 // updates the sprite for player1 and player2 scores 
 void UI::Update(sf::RenderWindow& window, float deltaTime)
 {
+
+	Playerscoretext.setString(to_string(GetScore()));
 	
 
 	if (ball->getPosition().y > window.getSize().x - ball->getSize().x && GetPlayerLive() != 0)
@@ -76,6 +84,7 @@ void gm::UI::render(sf::RenderWindow& window, float deltaTime)
 	window.draw(PlayerLivestext);
 	window.draw(Playerscoretext);
 	window.draw(GameOvertext);
+	window.draw(LevelCompletedtext);
 
 	
 }

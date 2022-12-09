@@ -18,6 +18,7 @@ namespace gm {
     protected:
         sf::RectangleShape body;
         MovementDirection direction;
+       
     public:
         Paddle(const sf::Vector2f& position, const sf::Vector2f& size);
 
@@ -35,7 +36,7 @@ namespace gm {
 
         virtual MovementDirection getMovementDirection() const;
 
-        
+        //sf::Vector2f movedirection;
     };
 }
 

@@ -13,6 +13,7 @@ public:
 
 	bool IsLeftClicked = false;
 
+
 private:
 	Paddle* playerPaddle;
 };

@@ -1,6 +1,7 @@
 // We need to include our header file to implement the function prototypes of our Game class
 #include "Game.h"
 #include<iostream>
+//#include "NormalBrick.h"
 
 // Since we are in our private .cpp file, it's fine to use a namespace here
 using namespace gm;
@@ -61,6 +62,7 @@ void Game::update()
 		{
 			ball->setPosition(Vector2f(paddle->getPosition().x + paddle->getSize().x / 2 + 10, paddle->getPosition().y - paddle->getSize().y / 2 - 5));
 
+
 		}
 		else
 		{
@@ -85,6 +87,8 @@ void Game::update()
 
 	gameUI->Update(window, deltaTime);
 
+	level->update(window, deltaTime);
+
 
 }
 
@@ -99,11 +103,7 @@ void Game::render()
 
 	ball->render(window, deltaTime);
 
-
-	/*paddingTop->render(window, deltaTime);
-	paddingLeft->render(window, deltaTime);
-	paddingRight->render(window, deltaTime);*/
-
+	level->render(window, deltaTime);
 
 	gameUI->render(window, deltaTime);
 
@@ -129,6 +129,8 @@ void Game::Setup()
 
 	gameUI = new UI(ball);
 	soundManager = new SoundManager();
+
+	level = new Level(ball, soundManager, gameUI);
 
 
 }
@@ -200,7 +202,7 @@ void Game::CollisionCheck()
 
 	}
 
-
+	
 
 
 }

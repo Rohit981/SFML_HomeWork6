@@ -19,11 +19,15 @@
 #include "PlayerController.h"
 #include "UI.h"
 #include "SoundManager.h"
+//#include "Brick.h"
+#include "Level.h"
 
 // Place our classes, functions, variables, and so forth in their own namespace to avoid naming collisions
 namespace gm {
 	const int GameWidth = 640;
 	const int GameHeight = 640;
+
+	
 
 	/* Our Game Class                               *
 	 * Implements the Game Loop Programming Pattern */
@@ -41,6 +45,7 @@ namespace gm {
 		//Paddle* paddingBottom;
 		Paddle* paddingLeft;
 		Paddle* paddingRight;
+		Level* level;
 
 		//Controllers
 		PlayerController* playerController;
@@ -48,10 +53,7 @@ namespace gm {
 		SoundManager* soundManager;
 
 		float testTime = 0;
-
-
-
-
+\
 	public:
 		/* Protoypes */
 		// Constructor
